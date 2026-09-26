@@ -1,7 +1,6 @@
-from src.tools.tools import web_search, scrape_url
+from src.pipelines.pipeline import run_research_pipeline
 
-output = web_search("what did Nvidia ceo said about ai recently")
-print(output)
-
-# output = scrape_url("https://www.coe.int/en/web/interculturalcities/paris")
-# print(output)
+if __name__ == "__main__":
+    topic = "The impact of AI on job market in 2026"
+    result = run_research_pipeline(topic)
+    # print("\nFinal Result:\n", result)

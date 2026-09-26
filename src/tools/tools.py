@@ -19,7 +19,7 @@ os.environ["SSL_CERT_FILE"] = certifi.where()
 os.environ["REQUESTS_CA_BUNDLE"] = certifi.where()
 tavily = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
-@tool(name="web_search", description="Perform a web search using the Tavily API.")
+@tool
 def web_search(query: str) -> str:
     """
     Perform a web search using the Tavily API.
@@ -41,7 +41,7 @@ def web_search(query: str) -> str:
 
     return "\n---\n".join(out)    
 
-@tool(name="scrape_url", description="Scrape and extract clean readable content from a URL.")
+@tool
 def scrape_url(url: str) -> str:
     """
     Scrape and extract clean readable content from a URL.
